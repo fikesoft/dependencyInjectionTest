@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ThemeService } from '../theme-service';
 import { GreenThemeService } from './green-theme-service';
 import { GreenComponent } from './green-component/green-component';
@@ -11,4 +11,7 @@ import { RedComponent } from './red-component/red-component';
   styleUrl: './green-section-component.css',
   providers: [{ provide: ThemeService, useClass: GreenThemeService }],
 })
-export class GreenSectionComponent {}
+export class GreenSectionComponent {
+  themeService = inject(ThemeService);
+  backgroundColor = this.themeService.getColor();
+}
