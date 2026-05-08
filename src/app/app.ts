@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { DefaultComponent } from './default-component/default-component';
+import { GreenSectionComponent } from './green-section-component/green-section-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [DefaultComponent, GreenSectionComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('dependencyInjectionTest');
-}
+export class App {}
